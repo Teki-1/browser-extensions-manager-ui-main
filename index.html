@@ -20,20 +20,26 @@
   </head>
   <body>
     <div class="topBar">
-      <img class="icon" src="assets\images\logo.svg" />
+      <img class="icon" src="assets\images\logo-light.svg" />
       <button class="theme"><img src="assets\images\icon-sun.svg"</button>
     </div>
 
     <div class="titleBox">
       <h1 class="above">Extensions List</h1>
-      <button class="filter">Inactive</button>
-      <button class="filter">Active</button>
-      <button class="filter">All</button>
+      <button class="unfilter" id="tab1" onclick="InactiveFilter('tab1')">
+        Inactive
+      </button>
+      <button class="unfilter" id="tab2" onclick="ActiveFilter('tab2')">
+        Active
+      </button>
+      <button class="unfilter" id="tab3" onclick="AllFilter('tab3')">
+        All
+      </button>
     </div>
 
     <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
     <div class="container">
-      <div class="box" id="a">
+      <div class="box inactive" id="a">
         <img class="logo" src="assets\images\logo-devlens.svg" />
         <h2 class="heading">DevLens</h2>
         <p>Quickly inspect page layouts and visualize element boundaries.</p>
@@ -42,7 +48,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('a')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -50,7 +56,7 @@
         </div>
       </div>
 
-      <div class="box" id="b">
+      <div class="box inactive" id="b">
         <img class="logo" src="assets\images\logo-style-spy.svg" />
         <h2 class="heading">StyleSpy</h2>
         <p>Instantly analyze and copy CSS from any webpage element.</p>
@@ -59,7 +65,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('b')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -67,7 +73,7 @@
         </div>
       </div>
 
-      <div class="box" id="c">
+      <div class="box inactive" id="c">
         <img class="logo" src="assets\images\logo-speed-boost.svg" />
         <h2 class="heading">SpeedBoost</h2>
         <p>Optimizes browser resource usage to accelerate page loading.</p>
@@ -76,7 +82,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('c')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -84,7 +90,7 @@
         </div>
       </div>
 
-      <div class="box" id="d">
+      <div class="box inactive" id="d">
         <img class="logo" src="assets\images\logo-json-wizard.svg" />
         <h2 class="heading">JSONWizard</h2>
         <p>Formats, validates, and prettifies JSON responses in-browser.</p>
@@ -93,7 +99,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('d')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -101,7 +107,7 @@
         </div>
       </div>
 
-      <div class="box" id="e">
+      <div class="box inactive" id="e">
         <img class="logo" src="assets\images\logo-tab-master-pro.svg" />
         <h2 class="heading">TabMaster Pro</h2>
         <p>Organizes browser tabs into groups and sessions.</p>
@@ -110,7 +116,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('e')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -118,7 +124,7 @@
         </div>
       </div>
 
-      <div class="box" id="f">
+      <div class="box inactive" id="f">
         <img class="logo" src="assets\images\logo-viewport-buddy.svg" />
         <h2 class="heading">ViewportBuddy</h2>
         <p>Simulates various screen resolutions directly within the browser.</p>
@@ -127,7 +133,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState(f)" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -135,7 +141,7 @@
         </div>
       </div>
 
-      <div class="box" id="g">
+      <div class="box inactive" id="g">
         <img class="logo" src="assets\images\logo-markup-notes.svg" />
         <h2 class="heading">Markup Notes</h2>
         <p>
@@ -147,7 +153,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('g')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -155,7 +161,7 @@
         </div>
       </div>
 
-      <div class="box" id="h">
+      <div class="box inactive" id="h">
         <img class="logo" src="assets\images\logo-grid-guides.svg" />
         <h2 class="heading">GridGuides</h2>
         <p>Overlay customizable grids and alignment guides on any webpage.</p>
@@ -164,7 +170,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('h')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -172,7 +178,7 @@
         </div>
       </div>
 
-      <div class="box" id="i">
+      <div class="box inactive" id="i">
         <img class="logo" src="assets\images\logo-palette-picker.svg" />
         <h2 class="heading">Palette Picker</h2>
         <p>Instantly extracts color palettes from any webpage.</p>
@@ -181,7 +187,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('i')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -189,7 +195,7 @@
         </div>
       </div>
 
-      <div class="box" id="j">
+      <div class="box inactive" id="j">
         <img class="logo" src="assets\images\logo-link-checker.svg" />
         <h2 class="heading">LinkChecker</h2>
         <p>Scans and highlights broken links on any page.</p>
@@ -198,7 +204,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('j')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -206,7 +212,7 @@
         </div>
       </div>
 
-      <div class="box" id="k">
+      <div class="box inactive" id="k">
         <img class="logo" src="assets\images\logo-dom-snapshot.svg" />
         <h2 class="heading">DOM Snapshot</h2>
         <p>Capture and export DOM structures quickly.</p>
@@ -215,7 +221,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('k')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -223,7 +229,7 @@
         </div>
       </div>
 
-      <div class="box" id="l">
+      <div class="box inactive" id="l">
         <img class="logo" src="assets\images\logo-console-plus.svg" />
         <h2 class="heading">ConsolePlus</h2>
         <p>Enhanced developer console with advanced filtering and logging.</p>
@@ -232,7 +238,7 @@
         </button>
         <div class="switch">
           <label class="toggle-switch">
-            <input type="checkbox" />
+            <input type="checkbox" onclick="FilterState('l')" />
             <div class="toggle-switch-background">
               <div class="toggle-switch-handle"></div>
             </div>
@@ -250,6 +256,74 @@
       const RemoveElement = (id) => {
         const element = document.getElementById(id);
         element.remove();
+      };
+
+      const ChangeColor = (id) => {
+        const element = document.getElementById(id);
+        if (element.classList.contains("unfilter"))
+          element.classList.toggle("filter");
+        else if (element.classList.contains("filter"))
+          element.classList.toggle("unfilter");
+      };
+
+      const FilterState = (id) => {
+        const element = document.getElementById(id);
+        const classCheck = element.classList.contains("inactive");
+        const checkClass = element.classList.contains("active");
+        if (classCheck) {
+          element.classList.toggle("active");
+        } else {
+          element.classList.toggle("inactive");
+        }
+        if (checkClass) {
+          element.classList.toggle("active");
+        } else element.classList.toggle("inactive");
+      };
+
+      const ActiveFilter = (id) => {
+        const element = document.getElementById(id);
+        let checkClass = document.querySelectorAll(".active");
+        let noRender = document.querySelectorAll(".inactive");
+
+        ChangeColor(id);
+
+        for (var i = 0; i < checkClass.length; i++) {
+          var a = checkClass[i];
+          a.style.display = "block";
+        }
+        for (var k = 0; i < noRender.length; k++) {
+          var b = noRender[k];
+          b.style.display = "none";
+        }
+      };
+
+      const InactiveFilter = (id) => {
+        const element = document.getElementById(id);
+        let checkClass = document.querySelectorAll(".inactive");
+        let noRender = document.querySelectorAll(".active");
+
+        ChangeColor(id);
+
+        for (var i = 0; i < checkClass.length; i++) {
+          var a = checkClass[i];
+          a.style.display = "block";
+        }
+        for (var k = 0; i < noRender.length; k++) {
+          var b = noRender[k];
+          b.style.display = "none";
+        }
+      };
+
+      const AllFilter = (id) => {
+        const element = document.getElementById(id);
+        const checkClass = document.querySelectorAll(".box");
+
+        ChangeColor(id);
+
+        for (var i = 0; i < checkClass.length; i++) {
+          var a = checkClass[i];
+          a.style.display = "block";
+        }
       };
     </script>
   </body>
