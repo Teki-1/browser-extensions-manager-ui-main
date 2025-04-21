@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="topBar">
+      <img class="icon" src="assets\images\logo.svg" />
+      <button class="theme"><img src="assets\images\icon-sun.svg"</button>
+    </div>
+
+    <div class="titleBox">
+      <h1 class="above">Extensions List</h1>
+      <button class="filter">Inactive</button>
+      <button class="filter">Active</button>
+      <button class="filter">All</button>
+    </div>
+
+    <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+    <div class="container">
+      <div class="box" id="a">
+        <img class="logo" src="assets\images\logo-devlens.svg" />
+        <h2 class="heading">DevLens</h2>
+        <p>Quickly inspect page layouts and visualize element boundaries.</p>
+        <button class="extensionButton" onclick="RemoveElement('a')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="b">
+        <img class="logo" src="assets\images\logo-style-spy.svg" />
+        <h2 class="heading">StyleSpy</h2>
+        <p>Instantly analyze and copy CSS from any webpage element.</p>
+        <button class="extensionButton" onclick="RemoveElement('b')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="c">
+        <img class="logo" src="assets\images\logo-speed-boost.svg" />
+        <h2 class="heading">SpeedBoost</h2>
+        <p>Optimizes browser resource usage to accelerate page loading.</p>
+        <button class="extensionButton" onclick="RemoveElement('c')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="d">
+        <img class="logo" src="assets\images\logo-json-wizard.svg" />
+        <h2 class="heading">JSONWizard</h2>
+        <p>Formats, validates, and prettifies JSON responses in-browser.</p>
+        <button class="extensionButton" onclick="RemoveElement('d')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="e">
+        <img class="logo" src="assets\images\logo-tab-master-pro.svg" />
+        <h2 class="heading">TabMaster Pro</h2>
+        <p>Organizes browser tabs into groups and sessions.</p>
+        <button class="extensionButton" onclick="RemoveElement('e')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="f">
+        <img class="logo" src="assets\images\logo-viewport-buddy.svg" />
+        <h2 class="heading">ViewportBuddy</h2>
+        <p>Simulates various screen resolutions directly within the browser.</p>
+        <button class="extensionButton" onclick="RemoveElement('f')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="g">
+        <img class="logo" src="assets\images\logo-markup-notes.svg" />
+        <h2 class="heading">Markup Notes</h2>
+        <p>
+          Enables annotation and notes directly onto webpages for collaborative
+          debugging.
+        </p>
+        <button class="extensionButton" onclick="RemoveElement('g')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="h">
+        <img class="logo" src="assets\images\logo-grid-guides.svg" />
+        <h2 class="heading">GridGuides</h2>
+        <p>Overlay customizable grids and alignment guides on any webpage.</p>
+        <button class="extensionButton" onclick="RemoveElement('h')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="i">
+        <img class="logo" src="assets\images\logo-palette-picker.svg" />
+        <h2 class="heading">Palette Picker</h2>
+        <p>Instantly extracts color palettes from any webpage.</p>
+        <button class="extensionButton" onclick="RemoveElement('i')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="j">
+        <img class="logo" src="assets\images\logo-link-checker.svg" />
+        <h2 class="heading">LinkChecker</h2>
+        <p>Scans and highlights broken links on any page.</p>
+        <button class="extensionButton" onclick="RemoveElement('j')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="k">
+        <img class="logo" src="assets\images\logo-dom-snapshot.svg" />
+        <h2 class="heading">DOM Snapshot</h2>
+        <p>Capture and export DOM structures quickly.</p>
+        <button class="extensionButton" onclick="RemoveElement('k')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="box" id="l">
+        <img class="logo" src="assets\images\logo-console-plus.svg" />
+        <h2 class="heading">ConsolePlus</h2>
+        <p>Enhanced developer console with advanced filtering and logging.</p>
+        <button class="extensionButton" onclick="RemoveElement('l')">
+          Remove
+        </button>
+        <div class="switch">
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/Teki-1">Teki-1</a>.
+    </div>
+    <script>
+      const RemoveElement = (id) => {
+        const element = document.getElementById(id);
+        element.remove();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+.logo {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
+  float: left;
+}
+.heading {
+  /*Title of every extension*/
+  color: white;
+  font-family: "Noto Sans";
+  font-weight: 400;
+  position: relative;
+
+  display: inline-block;
+}
+
+.topBar {
+  /*top part of page*/
+  border-style: solid;
+  background-color: white;
+  border-radius: 20px;
+}
+.theme {
+  float: right;
+  background-color: hsl(226, 11%, 37%);
+  border-radius: 12px;
+  border-color: hsl(226, 11%, 37%);
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.icon {
+  /*Image element for every extension logo*/
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.above {
+  /*Extension list title*/
+  color: white;
+  font-family: "Noto Sans";
+  font-weight: 400;
+  position: relative;
+
+  display: inline-block;
+}
+
+.filter {
+  /*filter for activated extensions*/
+  margin-top: 30px;
+  margin-left: 5px;
+  float: right;
+  border-color: hsl(226, 11%, 37%);
+  background-color: hsl(226, 25%, 17%);
+  color: hsl(0, 0%, 78%);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+.box {
+  /*div for every extension separately*/
+  border-radius: 25px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: hsl(226, 11%, 37%);
+  background-color: hsl(226, 25%, 17%);
+  display: inline-block;
+}
+.container {
+  /* div for all the extensions together*/
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto auto;
+  row-gap: 15px;
+  column-gap: 15px;
+}
+
+p {
+  margin-left: 20 px;
+  color: hsl(217, 61%, 90%);
+  font-size: 16px;
+  font-family: "Noto Sans";
+  font-weight: 500;
+  width: fit-content;
+  padding-left: 10px;
+}
+.extensionButton {
+  /*Remove button*/
+  font-family: "Noto Sans";
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-left: 10px;
+  border-color: hsl(226, 11%, 37%);
+  background-color: hsl(226, 25%, 17%);
+  color: hsl(0, 0%, 78%);
+  margin-top: 10px;
+}
+.switch {
+  /* div for position the toggle button*/
+  float: right;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+html {
+  background-color: hsl(227, 75%, 14%);
+}
+
+/*Footer*/
+.attribution {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: hsl(226, 25%, 17%);
+  color: hsl(0, 0%, 78%);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* From Uiverse.io by ErzenXz */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2px #ccc;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggle-switch-handle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -35px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aaa;
+  text-shadow: 1px 1px #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+  transform: translateX(45px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px hsl(3, 71%, 56%);
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+  background-color: hsl(3, 71%, 56%);
+  box-shadow: inset 0 0 0 2px hsl(3, 71%, 56%);
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+  content: "On";
+  color: hsl(3, 71%, 56%);
+  right: -15px;
+}
+
+.toggle-switch
+  input[type="checkbox"]:checked
+  + .toggle-switch-background
+  .toggle-switch-handle {
+  transform: translateX(40px);
+}
