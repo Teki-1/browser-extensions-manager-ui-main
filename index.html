@@ -16,12 +16,14 @@
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dark.css" id="theme" />
   </head>
   <body>
     <div class="topBar">
-      <img class="icon" src="assets\images\logo-light.svg" />
-      <button class="theme"><img src="assets\images\icon-sun.svg"</button>
+      <img class="icon" id="sparkle" src="assets\images\logo-light.svg" />
+      <button class="theme" onclick="toggleTheme()">
+        <img id="dark"src="assets\images\icon-sun.svg"
+      </button>
     </div>
 
     <div class="titleBox">
@@ -252,79 +254,6 @@
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="https://github.com/Teki-1">Teki-1</a>.
     </div>
-    <script>
-      const RemoveElement = (id) => {
-        const element = document.getElementById(id);
-        element.remove();
-      };
-
-      const ChangeColor = (id) => {
-        const element = document.getElementById(id);
-        if (element.classList.contains("unfilter"))
-          element.classList.toggle("filter");
-        else if (element.classList.contains("filter"))
-          element.classList.toggle("unfilter");
-      };
-
-      const FilterState = (id) => {
-        const element = document.getElementById(id);
-        const classCheck = element.classList.contains("inactive");
-        const checkClass = element.classList.contains("active");
-        if (classCheck) {
-          element.classList.toggle("active");
-        } else {
-          element.classList.toggle("inactive");
-        }
-        if (checkClass) {
-          element.classList.toggle("active");
-        } else element.classList.toggle("inactive");
-      };
-
-      const ActiveFilter = (id) => {
-        const element = document.getElementById(id);
-        let checkClass = document.querySelectorAll(".active");
-        let noRender = document.querySelectorAll(".inactive");
-
-        ChangeColor(id);
-
-        for (var i = 0; i < checkClass.length; i++) {
-          var a = checkClass[i];
-          a.style.display = "block";
-        }
-        for (var k = 0; i < noRender.length; k++) {
-          var b = noRender[k];
-          b.style.display = "none";
-        }
-      };
-
-      const InactiveFilter = (id) => {
-        const element = document.getElementById(id);
-        let checkClass = document.querySelectorAll(".inactive");
-        let noRender = document.querySelectorAll(".active");
-
-        ChangeColor(id);
-
-        for (var i = 0; i < checkClass.length; i++) {
-          var a = checkClass[i];
-          a.style.display = "block";
-        }
-        for (var k = 0; i < noRender.length; k++) {
-          var b = noRender[k];
-          b.style.display = "none";
-        }
-      };
-
-      const AllFilter = (id) => {
-        const element = document.getElementById(id);
-        const checkClass = document.querySelectorAll(".box");
-
-        ChangeColor(id);
-
-        for (var i = 0; i < checkClass.length; i++) {
-          var a = checkClass[i];
-          a.style.display = "block";
-        }
-      };
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
