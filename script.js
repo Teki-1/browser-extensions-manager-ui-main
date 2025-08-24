@@ -3,74 +3,6 @@ const RemoveElement = (id) => {
   element.remove();
 };
 
-const ChangeColor = (id) => {
-  const element = document.getElementById(id);
-  if (element.classList.contains("unfilter"))
-    element.classList.toggle("filter");
-  else if (element.classList.contains("filter"))
-    element.classList.toggle("unfilter");
-};
-
-const FilterState = (id) => {
-  const element = document.getElementById(id);
-  const classCheck = element.classList.contains("inactive");
-  const checkClass = element.classList.contains("active");
-  if (classCheck) {
-    element.classList.toggle("active");
-  } else {
-    element.classList.toggle("inactive");
-  }
-  if (checkClass) {
-    element.classList.toggle("active");
-  } else element.classList.toggle("inactive");
-};
-
-const ActiveFilter = (id) => {
-  const element = document.getElementById(id);
-  let checkClass = document.querySelectorAll(".active");
-  let noRender = document.querySelectorAll(".inactive");
-
-  ChangeColor(id);
-
-  for (var i = 0; i < checkClass.length; i++) {
-    var a = checkClass[i];
-    a.style.display = "block";
-  }
-  for (var k = 0; i < noRender.length; k++) {
-    var b = noRender[k];
-    b.style.display = "none";
-  }
-};
-
-const InactiveFilter = (id) => {
-  const element = document.getElementById(id);
-  let checkClass = document.querySelectorAll(".inactive");
-  let noRender = document.querySelectorAll(".active");
-
-  ChangeColor(id);
-
-  for (var i = 0; i < checkClass.length; i++) {
-    var a = checkClass[i];
-    a.style.display = "block";
-  }
-  for (var k = 0; i < noRender.length; k++) {
-    var b = noRender[k];
-    b.style.display = "none";
-  }
-};
-
-const AllFilter = (id) => {
-  const element = document.getElementById(id);
-  const checkClass = document.querySelectorAll(".box");
-
-  ChangeColor(id);
-
-  for (var i = 0; i < checkClass.length; i++) {
-    var a = checkClass[i];
-    a.style.display = "block";
-  }
-};
-
 function toggleTheme() {
   var element = document.querySelector("#theme");
   var item = document.querySelector("#dark");
@@ -94,3 +26,61 @@ function toggleTheme() {
     entity.setAttribute("src", "../assets/images/logo.svg");
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  setActiveFilter("all");
+});
+
+let CURRENT_FILTER = "all";
+
+const setActiveFilter = (id) => {
+  CURRENT_FILTER = id;
+
+  document.querySelectorAll("#inactive, #active, #all").forEach((btn) => {
+    btn.classList.remove("filter");
+    btn.classList.add("unfilter");
+  });
+  const btn = document.getElementById(id);
+  if (btn) {
+    btn.classList.remove("unfilter");
+    btn.classList.add("filter");
+  }
+
+  document.querySelectorAll(".box").forEach((item) => {
+    const isActive = item.classList.contains("active");
+    const isInactive = item.classList.contains("inactive");
+
+    if (isActive && isInactive) item.classList.remove("inactive");
+
+    item.style.display =
+      id === "all"
+        ? "block"
+        : id === "active"
+        ? isActive
+          ? "block"
+          : "none"
+        : isInactive
+        ? "block"
+        : "none";
+  });
+};
+
+const FilterState = (id) => {
+  const el = document.getElementById(id);
+  const checkbox = el.querySelector('input[type="checkbox"]');
+
+  el.classList.toggle("active", checkbox.checked);
+  el.classList.toggle("inactive", !checkbox.checked);
+
+  setActiveFilter(CURRENT_FILTER);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".box").forEach((el) => {
+    const cb = el.querySelector('input[type="checkbox"]');
+    if (!cb) return;
+    el.classList.toggle("active", cb.checked);
+    el.classList.toggle("inactive", !cb.checked);
+  });
+  setActiveFilter("all");
+});

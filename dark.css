@@ -7,7 +7,7 @@
 .heading {
   /*Title of every extension*/
   color: white;
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   position: relative;
 
@@ -39,7 +39,7 @@
 .above {
   /*Extension list title*/
   color: white;
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   position: relative;
 
@@ -94,14 +94,14 @@ p {
   margin-left: 20 px;
   color: hsl(217, 61%, 90%);
   font-size: 16px;
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   width: fit-content;
   padding-left: 10px;
 }
 .extensionButton {
   /*Remove button*/
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   display: inline-block;
   border-radius: 12px;
@@ -123,16 +123,7 @@ html {
 }
 
 /*Footer*/
-.attribution {
-  font-size: 15px;
-  text-align: center;
-  margin-top: 10px;
-  background-color: hsl(226, 25%, 17%);
-  color: hsl(0, 0%, 78%);
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
+
 /* From Uiverse.io by ErzenXz */
 .toggle-switch {
   position: relative;
@@ -203,4 +194,10 @@ html {
   + .toggle-switch-background
   .toggle-switch-handle {
   transform: translateX(40px);
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url(./assets/fonts/NotoSans-Italic-VariableFont_wdthwght.ttf)
+    format("truetype");
 }

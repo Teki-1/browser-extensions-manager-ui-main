@@ -12,8 +12,6 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Browser extensions manager UI</title>
-
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
     <link rel="stylesheet" href="dark.css" id="theme" />
@@ -28,18 +26,21 @@
 
     <div class="titleBox">
       <h1 class="above">Extensions List</h1>
-      <button class="unfilter" id="tab1" onclick="InactiveFilter('tab1')">
+      <button
+        class="unfilter"
+        id="inactive"
+        onclick="setActiveFilter('inactive')"
+      >
         Inactive
       </button>
-      <button class="unfilter" id="tab2" onclick="ActiveFilter('tab2')">
+      <button class="unfilter" id="active" onclick="setActiveFilter('active')">
         Active
       </button>
-      <button class="unfilter" id="tab3" onclick="AllFilter('tab3')">
+      <button class="unfilter" id="all" onclick="setActiveFilter('all')">
         All
       </button>
     </div>
 
-    <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
     <div class="container">
       <div class="box inactive" id="a">
         <img class="logo" src="assets\images\logo-devlens.svg" />
@@ -249,11 +250,6 @@
       </div>
     </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="https://github.com/Teki-1">Teki-1</a>.
-    </div>
     <script src="./script.js"></script>
   </body>
 </html>
